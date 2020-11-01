@@ -1,0 +1,72 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Tariff Comparison",
+    "description": "Tariff Comparison",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3001",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Tariff Comparison",
+      "description": "API for Tariff comparisson"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/tariffs/list": {
+      "get": {
+        "tags": [
+          "Tariffs"
+        ],
+        "summary": "Get all Tariffs in the system",
+        "parameters": [
+          {
+            "name": "annualconsumption",
+            "in": "query",
+            "type": "integer",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Tariffs"
+            }
+          }
+
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Tariffs": {
+      "required": [
+        "tariffName",
+        "annualCosts"
+      ]
+    }
+  },
+  "parameters": [
+    {
+      "name": "annualconsumption",
+      "in": "query",
+      "type": "integer",
+      "required": "true"
+    }
+  ]
+}
