@@ -1,6 +1,6 @@
 # `Tariff Comparison API`
 
-This API is helps user to compare different tariffs on their annual costs.
+This API helps user to compare different tariffs on their annual costs.
 
 Comparison will accept : 
 
